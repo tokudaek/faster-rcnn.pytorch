@@ -150,7 +150,6 @@ if __name__ == '__main__':
     if args.cfg_file is not None:
         cfg_from_file(args.cfg_file)
     args.set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]']
-    #args.set_cfgs = ['ANCHOR_SCALES', '[16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]']
 
     cfg.USE_GPU_NMS = args.cuda
 

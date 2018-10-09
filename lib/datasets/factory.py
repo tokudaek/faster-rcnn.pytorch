@@ -12,6 +12,7 @@ from __future__ import print_function
 
 __sets = {}
 from datasets.pascal_voc import pascal_voc
+from datasets.tcd import tcd
 from datasets.coco import coco
 from datasets.imagenet import imagenet
 from datasets.vg import vg
@@ -42,6 +43,11 @@ for year in ['2015']:
     name = 'coco_{}_{}'.format(year, split)
     __sets[name] = (lambda split=split, year=year: coco(split, year))
 
+# Set up tcd_2017<split>
+for year in ['2017']:
+  for split in ['train', 'val', 'trainval', 'test']:
+    name = 'tcd_{}_{}'.format(year, split)
+    __sets[name] = (lambda split=split, year=year: tcd(split, year))
 # Set up vg_<split>
 # for version in ['1600-400-20']:
 #     for split in ['minitrain', 'train', 'minival', 'val', 'test']:
